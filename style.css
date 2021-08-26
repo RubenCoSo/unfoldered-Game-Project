@@ -1,0 +1,80 @@
+body {
+  background-image: url(./pixil-frame-0.png);
+  display: flex;
+  justify-content: center;
+}
+
+#playpause {
+  width: 6rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+
+canvas {
+  padding-top: 2.5rem;
+  display: none;
+}
+
+#gameView {
+  display: flex;
+  justify-content: center;
+  padding-right: 5rem;
+  padding-top: 50px;
+}
+
+.gameTittle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.gameSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.timerOnScreen {
+  color: blueviolet;
+}
+
+#counter {
+  display: flex;
+  align-items: center;
+}
+
+.gemsCounter {
+  font-size: 5rem;
+  color: blueviolet;
+}
+.gameTittle > img {
+  width: 50%;
+}
+.gameSide > img {
+  width: 75%;
+  padding-bottom: 5rem;
+}
+#startGame {
+  height: 5rem;
+  width: 15rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: rgb(43, 137, 226);
+  color: blueviolet;
+  box-shadow: 5px 5px 15px 10px #a95aff;
+  margin-top: 8rem;
+}
+
+#instructions {
+  height: 5rem;
+  width: 16rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: rgb(43, 137, 226);
+  color: blueviolet;
+  box-shadow: 5px 5px 15px 10px #a95aff;
+  margin-left: 1rem;
+  margin-top: 8rem;
+}

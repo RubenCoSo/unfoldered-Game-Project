@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Crystals Of Power</title>
+</head>
+<body>
+    <div>
+        <img class="pause" id="playpause" src="" alt="">
+    </div>
+    <div>
+        <audio  autoplay = "true" src = "" id="music"></audio>
+        <script>
+            let music = document.getElementById('music')
+            music.volume = 0.1
+        </script>
+    </div>
+    <div class ="gameTittle"> 
+        <img id = 'title' src="./game title.png" alt="">
+        <button type="button" class="btn btn-secondary btn-lg" id='startGame'>Start Game</button>
+        <div id="counter">
+        </div>
+        <div id="timer">
+        </div>
+        <!-- Modal -->
+        <section>
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="modal fade" id="instructionsModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1>How to Help the Great Wizard.</h1>
+                                </div>
+                                <div class="modal-header">
+                                    <p>Hello aprentice!!!<br>
+                                    The Great Wizard have to Collect as much cristals of power as he can. He trusted you to guide him through this dangerous
+                                        quest in the mighty astral plane where those crystal are grown. Follow the instructions carefully because time is running fast 
+                                        in the astral plane. Every time you pick a crystal the Great wizard will be rewarded with extra time for the quest. But, Wacht Out!
+                                        as bigger becomes the quantity of crystals you own it will give less time.<br>
+
+                                        Follow the instrtons to guide the Great Wizard: <br>
+
+                                        <b> W -------------> Up</b><br>
+                                        <b> A -------------> Left</b><br>
+                                        <b> S -------------> Down</b><br>
+                                        <b> D -------------> Right</b><br>
+
+                                        Good luck Aprentice !!!
+
+                                    </p>
+                                </div>
+                                <div class="modal-header">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#instructionsModal" id='instructions'>Instructions</button>
+                </div>
+            </div>
+        </div>
+        </section>
+        <!-- Modal -->
+        
+    </div>
+    <div id='gameView'>
+        <canvas id ='canvas'></canvas>
+    </div>
+    <audio src="./GemCrystal Collect Sound Effect Crash Bandicoot N. Sane Trilogy.mp3" id ='pickAGem'></audio>
+    <script>
+        let audio = document.getElementById('pickAGem')
+        audio.volume = 1
+    </script>
+    <script src="./gems.js"></script>
+    <script src="./maps.js"></script>
+    <script src="./gameApp.js"></script>
+    <script src="./index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+</body>
+</html>
