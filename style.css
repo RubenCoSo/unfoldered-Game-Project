@@ -2,6 +2,7 @@ body {
   background-image: url(./pixil-frame-0.png);
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 #playpause {
