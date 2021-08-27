@@ -26,8 +26,6 @@ const gameApp = {
   timerCounter: 10,
   timerCounterMinutes: 0,
   timerCounterSeconds: 0,
-  timer: document.getElementById("timer"),
-  timeShow: document.createElement("p"),
   minutes: undefined,
   seconds: undefined,
   crystalSound: document.getElementById("pickAGem"),
@@ -224,10 +222,8 @@ const gameApp = {
 
     this.ctx.font = "bold 30px Verdana";
     this.ctx.fillText(`Timer: ${this.minutes}:${this.seconds}`, 100, 100);
-
-    this.timeShow.innerText = `The Crystal's Plane will close in : ${this.minutes}:${this.seconds}`;
-    this.timeShow.setAttribute("id", "timerShow");
-    this.timer.appendChild(timeShow);
+    let timerShow = document.getElementById("timerShow");
+    timerShow.innerText = `The Crystal's Plane will close in : ${this.minutes}:${this.seconds}`;
   },
 
   outOfTime() {

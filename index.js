@@ -29,6 +29,9 @@ window.onload = () => {
     let gemsBox = document.createElement("div");
     gemsBox.setAttribute("id", "gemsBox");
     counter.appendChild(gemsBox);
+    let timeShow = document.createElement("p");
+    timeShow.setAttribute("id", "timerShow");
+    timer.appendChild(timeShow);
     gameSide.className = "gameSide";
   };
 };
