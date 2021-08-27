@@ -189,11 +189,20 @@ const gameApp = {
         this.refGem = this.gems.splice(i, 1);
         let pickaGem = document.getElementById("pickAGem");
         pickaGem.play();
+        // let counter = document.getElementById("counter");
+        // let gemsCountText = document.createElement("p");
+        // gemsCountText.setAttribute("class", "gemsCounter");
+        // counter.appendChild(gemsCountText);
+        // gemsCountText.innerText = `X ${this.score}`;
+        let gemsBox = document.getElementById("gemsBox");
+        let gemsInBox = document.createElement("img");
+        gemsInBox.setAttribute("class", "gemsInBox");
+        gemsInBox.src = "./Untitled.png";
+        gemsBox.appendChild(gemsInBox);
         this.score < 10 ? (this.timerCounter += 3) : null;
         this.score > 10 && this.score < 15 ? (this.timerCounter += 2) : null;
         this.score > 20 ? (this.timerCounter += 1) : null;
-
-        this.gemExplosion(this.refGem[0]);
+        this.gemExplosionthis.refGem[0];
       }
     });
   },
