@@ -24,6 +24,10 @@ const gameApp = {
   MAX_Gems: 5,
   frameCounter: 0,
   timerCounter: 10,
+  timerCounterMinutes: 0,
+  timerCounterSeconds: 0,
+  timer: document.getElementById("timer"),
+  timeShow: document.createElement("p"),
   minutes: undefined,
   seconds: undefined,
   crystalSound: document.getElementById("pickAGem"),
@@ -80,7 +84,6 @@ const gameApp = {
       this.map.move();
       this.drawAll();
       this.pickUpGems();
-      this.showScores();
       this.frameCounter++;
       if (this.frameCounter % 100 === 0) {
         this.timerCounter--;
@@ -189,11 +192,6 @@ const gameApp = {
         this.refGem = this.gems.splice(i, 1);
         let pickaGem = document.getElementById("pickAGem");
         pickaGem.play();
-        // let counter = document.getElementById("counter");
-        // let gemsCountText = document.createElement("p");
-        // gemsCountText.setAttribute("class", "gemsCounter");
-        // counter.appendChild(gemsCountText);
-        // gemsCountText.innerText = `X ${this.score}`;
         let gemsBox = document.getElementById("gemsBox");
         let gemsInBox = document.createElement("img");
         gemsInBox.setAttribute("class", "gemsInBox");
@@ -207,27 +205,29 @@ const gameApp = {
     });
   },
 
-  showScores() {
-    this.ctx.font = "bold 30px Verdana";
-    this.ctx.fillText("Collected Gems: " + this.score, 500, 100);
-  },
+  // showScores() {
+  //   this.ctx.font = "bold 30px Verdana";
+  //   this.ctx.fillText("Collected Gems: " + this.score, 500, 100);
+  // },
 
   timer() {
-    this.minutes;
-    this.seconds;
-    this.ctx.font = "bold 30px Verdana";
+    this.timerCounterSeconds = Math.floor(this.timerCounter % 60);
     if (this.timerCounter < 60) {
-      this.ctx.fillText("Timer: 00:" + this.timerCounter, 100, 100);
-    } else {
-      this.minutes = this.timerCounter / 60;
-      this.seconds = this.timerCounter % 60;
-      this.minutes > 9
-        ? (this.minutes = `0${this.minutes}`)
-        : (this.minutes = `${this.minutes}`);
-      this.seconds > 9
-        ? (this.seconds = `0${this.seconds}`)
-        : (this.seconds = `${this.seconds}`);
+      this.timerCounterMinutes = Math.floor(this.timerCounter / 60);
     }
+    this.timerCounterMinutes < 10
+      ? (this.minutes = `0${this.timerCounterMinutes}`)
+      : (this.minutes = `${this.timerCounterMinutes}`);
+    this.timerCounterSeconds < 10
+      ? (this.seconds = `0${this.timerCounterSeconds}`)
+      : (this.seconds = `${this.timerCounterSeconds}`);
+
+    this.ctx.font = "bold 30px Verdana";
+    this.ctx.fillText(`Timer: ${this.minutes}:${this.seconds}`, 100, 100);
+
+    this.timeShow.innerText = `The Crystal's Plane will close in : ${this.minutes}:${this.seconds}`;
+    this.timeShow.setAttribute("id", "timerShow");
+    this.timer.appendChild(timeShow);
   },
 
   outOfTime() {

@@ -29,10 +29,6 @@ window.onload = () => {
     let gemsBox = document.createElement("div");
     gemsBox.setAttribute("id", "gemsBox");
     counter.appendChild(gemsBox);
-    // let gemsCounter = document.createElement("img");
-    // gemsCounter.setAttribute("class", "gemsCounter");
-    // gemsCounter.src = "./Untitled.png";
-    // counter.appendChild(gemsCounter);
     gameSide.className = "gameSide";
   };
 };
