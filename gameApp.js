@@ -219,9 +219,6 @@ const gameApp = {
     this.timerCounterSeconds < 10
       ? (this.seconds = `0${this.timerCounterSeconds}`)
       : (this.seconds = `${this.timerCounterSeconds}`);
-
-    this.ctx.font = "bold 30px Verdana";
-    this.ctx.fillText(`Timer: ${this.minutes}:${this.seconds}`, 100, 100);
     let timerShow = document.getElementById("timerShow");
     timerShow.innerText = `The Crystal's Plane will close in : ${this.minutes}:${this.seconds}`;
   },
