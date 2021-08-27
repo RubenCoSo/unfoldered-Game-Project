@@ -226,13 +226,18 @@ const gameApp = {
   outOfTime() {
     clearInterval(this.intervalId);
     setInterval(() => {
-      this.ctx.fillStyle = "black";
-      this.ctx.fillRect(0, 0, this.canvasSize.w, this.canvasSize.h);
-      this.ctx.strokeStyle = "purple";
+      this.ctx.fillStyle = "#43ABFF";
+      this.ctx.drawImage(
+        this.map.map,
+        0,
+        0,
+        this.map.mapSize.w,
+        this.map.mapSize.h
+      );
       this.ctx.font = "bold 80px Verdana";
-      this.ctx.strokeText("Game Over", 200, 300);
+      this.ctx.fillText("Game Over", 200, 300);
       this.ctx.font = "bold 40px Verdana";
-      this.ctx.strokeText("You collected " + this.score + " gems!!!", 200, 400);
+      this.ctx.fillText("You collected " + this.score + " gems!!!", 200, 400);
     }, 1000 / 60);
   },
 };

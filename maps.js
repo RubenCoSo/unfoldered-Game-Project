@@ -14,7 +14,8 @@ class Map {
     this.moveUp = false;
     this.moveDown = false;
 
-    (this.canvasSize = canvasSize), (this.map = new Image());
+    this.canvasSize = canvasSize;
+    this.map = new Image();
     this.map.src = "./pixil-frame-0.png";
   }
 
